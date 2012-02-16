@@ -71,7 +71,7 @@ class RDoc::RI::Driver
 
   def self.default_options
     options = {}
-    options[:use_stdout] = !$stdout.tty? || defined?(JRUBY_VERSION)
+    options[:use_stdout] = !$stdout.tty?
     options[:width] = 72
     options[:interactive] = false
     options[:use_cache] = true
