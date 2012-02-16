@@ -1145,7 +1145,7 @@ Options may also be set in the 'RI' environment variable.
   # PAGER environment variables followed by pager, less then more.
 
   def setup_pager
-    return if @use_stdout
+    return if @use_stdout || `tty`.chomp == "not a tty"
 
     pagers = [ENV['RI_PAGER'], ENV['PAGER'], 'pager', 'less', 'more']
 
